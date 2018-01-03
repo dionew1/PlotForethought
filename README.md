@@ -1,24 +1,8 @@
-# README
+# Plot Forethought
+This application is designed to allow users to login to search for National Parks by state and view campground information.
+Users can then create and save his/her prospected trip to his/her Google Calendar.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Versions
+* Rails: 5.1.4
+* Rails: 2.4.1
+* RSpec: 3.7.1
