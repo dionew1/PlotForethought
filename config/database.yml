@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: plot_forethought_production
-  username: plot_forethought
-  password: <%= ENV['PLOT_FORETHOUGHT_DATABASE_PASSWORD'] %>
