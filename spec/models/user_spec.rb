@@ -7,6 +7,7 @@ describe User do
   it { should validate_presence_of(:last_name) }
   it { should validate_presence_of(:google_id) }
   it { should validate_presence_of(:token) }
+  it { should validate_presence_of(:refresh_token) }
   it { should validate_presence_of(:oauth_expires_at) }
 
   context "Update or create user given valid user info" do
@@ -21,6 +22,7 @@ describe User do
       expect(user.first_name).to eq user_info[:info][:first_name]
       expect(user.last_name).to eq user_info[:info][:last_name]
       expect(user.token).to eq user_info[:credentials][:token]
+      expect(user.refresh_token).to eq user_info[:credentials][:refresh_token]
       expect(user.oauth_expires_at).to eq user_info[:credentials][:expires_at]
     end
   end
