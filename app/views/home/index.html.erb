@@ -1,3 +1,8 @@
 <h1>Plot Forethought</h1>
-<h3>Looking to plan a camping trip to a National Park?</h3>
-<p>Please login to continue <%= link_to "Sign in with Google", "/auth/google"%></p>
+  <% if current_user %>
+    <h2>Welcome <%= current_user.first_name%></h2>
+    <%=link_to "Logout", logout_path %>
+  <% else %>
+    <h3>Looking to plan a camping trip to a National Park?</h3>
+    <p>Please login to continue <%= link_to "Sign in with Google", "/auth/google"%></p>
+  <% end %>
