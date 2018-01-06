@@ -3,7 +3,7 @@ class CreateUser < ActiveRecord::Migration[5.1]
     enable_extension("citext")
 
     create_table :users do |t|
-      t.text     :uid
+      t.text     :google_id
       t.citext   :first_name
       t.citext   :last_name
       t.citext   :email
