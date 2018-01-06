@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 20180105011143) do
     t.citext "last_name"
     t.citext "email"
     t.text "token"
-    t.text "refresh_token"
-    t.datetime "oauth_expires_at"
+    t.integer "oauth_expires_at"
   end
 
 end

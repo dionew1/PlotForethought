@@ -3,7 +3,6 @@ validates :email, presence: true, uniqueness: true
  validates :first_name,
            :last_name,
            :token,
-           :refresh_token,
            :oauth_expires_at,
            :google_id,
            presence: true
@@ -17,7 +16,6 @@ validates :email, presence: true, uniqueness: true
     first_name: auth[:info][:first_name],
     last_name: auth[:info][:last_name],
     token: auth[:credentials][:token],
-    refresh_token: auth[:credentials][:refresh_token],
     oauth_expires_at: auth[:credentials][:expires_at]
   }
   user.save!
