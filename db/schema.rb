@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180105011143) do
   enable_extension "citext"
 
   create_table "users", force: :cascade do |t|
-    t.text "uid"
+    t.text "google_id"
     t.citext "first_name"
     t.citext "last_name"
     t.citext "email"
