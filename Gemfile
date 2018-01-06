@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'cloudinary'
 gem 'omniauth-google-oauth2'
+# gem 'bootstrap-sass'
 
 
 group :development, :test do
