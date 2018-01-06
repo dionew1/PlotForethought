@@ -46,14 +46,13 @@ def stub_omniauth
     provider: "google_ouath2",
     uid: "12345678910",
     info: {
-      email: "dee@example.com",
-      first_name: "Dee",
-      last_name: "Wilson"
+      email: "shawn@pysch.com",
+      first_name: "Shawn",
+      last_name: "Spencer"
     },
     credentials: {
       token: "abcdefg12345",
-      refresh_token: "12345abcdefg",
-      expires_at:(DateTime.now + 1),
+      expires_at: 1515274517,
     }
   })
 end

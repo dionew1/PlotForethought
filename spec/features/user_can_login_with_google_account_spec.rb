@@ -9,9 +9,9 @@ feature 'User can login with google account' do
     expect(page).to have_content "Sign in with Google"
 
     click_on "Sign in with Google"
-    
+
     expect(page).to have_content "Welcome"
-    expect(page).to have_content "Dee"
+    expect(page).to have_content "Shawn"
     expect(page).to have_link "Logout"
   end
 end
