@@ -1,3 +1,5 @@
+[![CircleCI token](https://img.shields.io/circleci/project/github/dionew1/PlotForethought/master.svg?style=plastic)]()
+
 # Plot Forethought
 This application is designed to allow users to login to search for National Parks by state and view campground information.
 Users can then create and save his/her prospected trip to his/her Google Calendar.
