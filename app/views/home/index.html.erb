@@ -10,6 +10,11 @@
 </div>
   <% if current_user %>
     <h2>Welcome <%= current_user.first_name%></h2>
+    <% all_states.each do |name, abbr| %>
+      <%= link_to parks_path(abbr) do %>
+        <%= content_tag :span, "#{name}", :class => "state" %>
+      <% end %>
+    <% end %>
   <% else %>
     <h3>Looking to plan a camping trip to a National Park?</h3>
     <p>Please login to continue <%= link_to "Sign in with Google", "/auth/google"%></p>
