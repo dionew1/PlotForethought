@@ -4,4 +4,16 @@ body {
     text-align:right;
     padding-top: 45px;
   }
-}
+  a, a:hover {
+    text-decoration: none;
+  }
+  .state {
+    background: $green;
+    color: $white;
+    margin: 3px;
+    &:hover {
+      background: $white;
+      border-color: $green;
+      color: $green;
+    }
+  }
