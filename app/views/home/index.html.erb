@@ -1,7 +1,15 @@
-<h1>Plot Forethought</h1>
+<div class="row">
+  <div class="col-xs-9" >
+    <h1>Plot Forethought</h1>
+  </div>
+  <div class="col-xs-3 logout">
+    <% if current_user %>
+      <%= link_to "Logout", logout_path %>
+    <%end%>
+  </div>
+</div>
   <% if current_user %>
     <h2>Welcome <%= current_user.first_name%></h2>
-    <%=link_to "Logout", logout_path %>
   <% else %>
     <h3>Looking to plan a camping trip to a National Park?</h3>
     <p>Please login to continue <%= link_to "Sign in with Google", "/auth/google"%></p>
