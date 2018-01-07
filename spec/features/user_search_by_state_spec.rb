@@ -9,5 +9,4 @@ feature "User can see states to search by" do
 
     expect(page).to have_selector ".state", count: 50
     expect(page).to have_content "ALASKA"
-  end
 end
