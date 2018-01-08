@@ -1,11 +1,11 @@
 body {
   background: $white;
+  a, a:hover {
+    text-decoration: none;
+  }
   .logout {
     text-align:right;
     padding-top: 45px;
-  }
-  a, a:hover {
-    text-decoration: none;
   }
   .state {
     background: $green;
@@ -16,5 +16,8 @@ body {
       border-color: $green;
       color: $green;
     }
+  }
+  .parks-header {
+    color: $blue;
   }
 }
