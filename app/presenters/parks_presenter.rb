@@ -4,8 +4,10 @@ class ParksPresenter
     @state_code = state_code
   end
 
-  def parks_by_state
-    parks_service.campgrounds_by_state
+  def park_campgrounds_by_state
+    parks_service.campgrounds_by_state[:data].map do |raw_campground_info|
+      ParkCampground.new(raw_campground_info)
+    end
   end
 
   private
