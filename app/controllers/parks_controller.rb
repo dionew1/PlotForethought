@@ -2,7 +2,7 @@ class ParksController < ApplicationController
   before_action :logged_in?
 
   def index
-    @parks=ParksPresenter.parks_by_state
+    @parks=ParksPresenter.new(params[:format]).parks_by_state
   end
 
 
