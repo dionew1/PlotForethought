@@ -12,7 +12,9 @@ feature "User can search by state" do
 
     click_on "ALASKA"
 
-    
+    expect(current_path).to eq parks_path("AK") 
+    expect(page).to have_selector ".park"
+    expect(page).to have_link "Wonder Lake"
   end
 end
 
@@ -22,5 +24,9 @@ feature "An unregistered user" do
 
     expect(page).to have_content "Please login to continue"
     expect(page).to have_link "Sign in with Google"
+
+    visit parks_path("AK")
+
+    expect(status_code).to eq 404
   end
 end

@@ -1,0 +1,10 @@
+<h2 class="parks-header">Available Parks</h2>
+<div class="row park-container">
+  <% @parks.each do |park| %>
+  <div class="col-sm-4">
+    <%= image_tag("tent-152.png") %>
+    <h6>park.name</h6>
+    <p>Camping Available <%=park.camping?%></p>
+  </div>
+  <% end %>
+</div>
