@@ -12,6 +12,7 @@ feature "User can search by state" do
 
     click_on "ALASKA"
 
+    expect(page).to have_current_path(parks_path, ignore_query: true)
     expect(page).to have_selector ".park"
     expect(page).to have_link "Wonder Lake"
   end
