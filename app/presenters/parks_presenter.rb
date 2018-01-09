@@ -10,6 +10,12 @@ class ParksPresenter
     end
   end
 
+  def park_campgrounds_by_id(id)
+    park_campgrounds_by_state.find do |park|
+      park_id = id
+    end
+  end
+
   private
     attr_reader :state_code
 
