@@ -12,7 +12,7 @@
     <h2>Welcome, <%= current_user.first_name%>!</h2>
     <h4>Choose a state to explore:</h4>
     <% all_states.each do |name, abbr| %>
-      <%= link_to parks_path(abbr) do %>
+      <%= link_to parks_path(state: abbr) do %>
         <%= content_tag :span, "#{name}", :class => "state btn" %>
       <% end %>
     <% end %>
