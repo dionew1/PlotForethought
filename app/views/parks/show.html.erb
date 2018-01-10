@@ -1,9 +1,9 @@
 <style>body{background: #1D5F66; color: #F7F5FB;}</style>
-  <h2 class="park-show"><%= @park.name %></h2>
+  <h2 class="park-show name"><%= @park.name %></h2>
 
   <div class="description">
     <h4>About the Campground</h4>
-    <p><%=@park.description%></p>
+    <p class="direction_info"><%=@park.description%></p>
   </div>
 
   <% if @park.direction_info != "" %>
