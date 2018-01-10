@@ -53,14 +53,30 @@ body {
     text-align: center;
   }
 
-  .container {
-    width: 100%;
-    padding: 5px 15px;
+  footer {
     background: $blue;
+    width: 100%;
+    margin-top: 10px;
 
-    .nps {
-      color: $white;
+    .container {
+      padding: 5px;
       text-align: center;
+
+      .nps {
+        color: $white;
+      }
     }
+  }
+  .control-label {
+    color: $black;
+  }
+
+  .input-date {
+    color: $orange;
+  }
+
+  button.btn-secondary {
+    background: orange;
+    margin-top: 10px;
   }
 }
