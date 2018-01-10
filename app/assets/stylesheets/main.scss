@@ -53,4 +53,14 @@ body {
     text-align: center;
   }
 
+  .container {
+    width: 100%;
+    padding: 5px 15px;
+    background: $blue;
+
+    .nps {
+      color: $white;
+      text-align: center;
+    }
+  }
 }

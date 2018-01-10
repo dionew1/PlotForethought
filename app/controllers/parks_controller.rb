@@ -2,8 +2,12 @@ class ParksController < ApplicationController
   before_action :logged_in?
 
   def index
-    session[:state] = params[:state]
-    @parks=ParksPresenter.new(session[:state]).park_campgrounds_by_state
+    if params[:state]
+      session[:state] = params[:state]
+      @parks=ParksPresenter.new(session[:state]).park_campgrounds_by_state
+    else
+      redirect_to root_path
+    end
   end
 
 
@@ -17,5 +21,4 @@ class ParksController < ApplicationController
     def logged_in?
       render_404 unless current_user
     end
-
 end

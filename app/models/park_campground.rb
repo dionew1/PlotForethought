@@ -11,7 +11,11 @@ class ParkCampground
 
   def description
     info = campground_info[:description]
-    if info.nil? || info.empty?
+    if info.nil?
+      "Information unavailable at this time."
+    elsif info == 0
+      "Information unavailable at this time."
+    elsif info.empty?
       "Information unavailable at this time."
     else
       info

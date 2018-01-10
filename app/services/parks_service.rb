@@ -16,5 +16,4 @@ class ParksService
 
   private
     attr_reader :conn, :filter
-
 end
