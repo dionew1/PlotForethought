@@ -71,8 +71,13 @@ body {
     color: $black;
   }
 
+  .controls {
+    text-align: center;
+  }
+
   .input-date {
     color: $orange;
+    width: 100%;
   }
 
   button.btn-secondary {

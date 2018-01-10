@@ -10,13 +10,14 @@ feature 'User can view camping_info' do
       click_on "ALASKA"
       click_on "Wonder Lake"
 
-      expect(page).to have_selector(".name")
-      expect(page).to have_selector(".description")
-      expect(page).to have_selector(".direction_info")
-      expect(page).to have_selector(".contact-info")
-      expect(page).to have_selector(".site-count-summary")
-      expect(page).to have_selector(".amenities")
-      expect(page).to have_selector(".accessibility")
+      expect(page).to have_selector ".name"
+      expect(page).to have_selector ".description"
+      expect(page).to have_selector ".direction_info"
+      expect(page).to have_selector ".contact-info"
+      expect(page).to have_selector ".site-count-summary"
+      expect(page).to have_selector ".amenities"
+      expect(page).to have_selector ".accessibility"
+      expect(page).to have_selector ".calendar"
     end
   end
 end

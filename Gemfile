@@ -5,14 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.4'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.7'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem 'rails'
+gem 'pg'
+gem 'puma'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder'
 gem 'figaro'
 gem 'cloudinary'
 gem 'omniauth-google-oauth2'
@@ -28,13 +28,13 @@ group :development, :test do
   gem 'shoulda'
   gem 'faker'
   gem 'database_cleaner'
-  gem 'newrelic_rpm', '~> 3.15'
+  gem 'newrelic_rpm'
   gem "factory_bot_rails"
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console'
+  gem 'listen'
   gem 'bullet'
 end
 
