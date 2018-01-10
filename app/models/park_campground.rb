@@ -11,7 +11,7 @@ class ParkCampground
 
   def description
     info = campground_info[:description]
-    if info.empty? || info.nil?
+    if info.nil? || info.empty?
       "Information unavailable at this time."
     else
       info
@@ -19,7 +19,12 @@ class ParkCampground
   end
 
   def direction_info
-    campground_info[:directionsOverview]
+    info = campground_info[:directionsOverview]
+    if info.nil? || info.empty?
+      "Information unavailable at this time."
+    else
+      info
+    end
   end
 
   def contacts
@@ -117,7 +122,7 @@ class ParkCampground
   def trash_recycling
     if amenities[:trashRecyclingCollection] == false
       "Recyling is not Available."
-    elsif amenities.nil?
+    elsif amenities.nil? || amenities[:trashRecyclingCollection].empty?
       "Information unavailable at this time."
     else
       amenities[:trashRecyclingCollection]
@@ -127,7 +132,7 @@ class ParkCampground
   def laundry
     if amenities[:laundry] == false
       "Laundry is not available."
-    elsif amenities.nil?
+    elsif amenities.nil? || amenities[:laundry].empty?
       "Information unavailable at this time."
     else
       amenities[:laundry]
@@ -137,7 +142,7 @@ class ParkCampground
  def onsite_host
    if amenities[:staffOrVolunteerHostOnSite] == false
      "No host on site."
-   elsif amenities.nil?
+   elsif amenities.nil? || amenities[:staffOrVolunteerHostOnSite].empty?
      "Information unavailable at this time."
    else
      amenities[:staffOrVolunteerHostOnSite]
@@ -155,7 +160,7 @@ class ParkCampground
  def ice
    if amenities[:iceAvailableForSale] == false
      "Ice is not for sale."
-   elsif amenities.nil?
+   elsif amenities.nil? || amenities[:iceAvailableForSale].empty?
      "Information unavailable at this time."
    else
      amenities[:iceAvailableForSale]
@@ -165,7 +170,7 @@ class ParkCampground
  def firewood
    if amenities[:firewoodForSale] == false
      "Firewood is not for sale."
-   elsif amenities.nil?
+   elsif amenities.nil? || amenities[:firewoodForSale].empty?
      "Information unavailable at this time."
    else
      amenities[:firewoodForSale]
@@ -175,7 +180,7 @@ class ParkCampground
  def food_storage_lockers
    if amenities[:foodStorageLockers] == false
      "No food storage lockers are available."
-   elsif amenities.nil?
+   elsif amenities.nil? || amenities[:foodStorageLockers].empty?
      "Information unavailable at this time."
    else
      amenities[:foodStorageLockers]
@@ -185,7 +190,7 @@ class ParkCampground
  def cell_phone_reception
    if amenities[:cellPhoneReception] == false
      "Cell phone reception is not available."
-   elsif amenities.nil?
+   elsif amenities.nil? || amenities[:cellPhoneReception].empty?
      "Information unavailable at this time."
    else
      amenities[:cellPhoneReception]
@@ -213,7 +218,7 @@ class ParkCampground
  end
 
  def accessibility_info
-   if accessibility.empty? || accessibility.nil?
+   if accessibility.nil? || accessibility[:adaInfo].empty?
      "Information is unavailable at this time."
    else
      accessibility[:adaInfo]
@@ -221,7 +226,7 @@ class ParkCampground
  end
 
  def wheelchair_access
-   if accessibility.empty? || accessibility.nil?
+   if accessibility.nil? || accessibility[:wheelchairAccess].empty?
      "Information is unavailable at this time."
    else
      accessibility[:wheelchairAccess]

@@ -4,13 +4,28 @@ body {
     text-decoration: none;
   }
 
+  h4 {
+    color: $black;
+  }
+
   h5.list-group-item {
     background: $blue;
     color: $white;
   }
 
+  h2.parks-header {
+    color: $orange;
+  }
+
+  a.park-link {
+    color: $blue;
+    &:hover {
+      color: $gray;
+    }
+  }
+
   li.list-group-item {
-    color: $gray;
+    color: $black;
   }
 
   .park-show {
@@ -21,6 +36,7 @@ body {
     text-align:right;
     padding-top: 45px;
   }
+
   .state {
     background: $green;
     color: $white;
@@ -29,11 +45,10 @@ body {
       background: $white;
       border-color: $green;
       color: $green;
+      text-decoration: none;
     }
   }
-  .parks-header {
-    color: $blue;
-  }
+
   .center {
     text-align: center;
   }
