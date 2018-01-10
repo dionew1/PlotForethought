@@ -22,187 +22,209 @@ class ParkCampground
     campground_info[:directionsOverview]
   end
 
+  def contacts
+    campground_info[:contacts]
+  end
+
   def phone_numbers #array
-    phone_nums = campground_info[:contacts]
-    if phone_nums.nil? || phone_nums[:phoneNumbers].empty?
+    if contacts.nil? || contacts[:phoneNumbers].empty?
       ["Information unavailable at this time."]
-    elsif phone_nums[:phoneNumbers]
-      phone_nums[:phoneNumbers].map { |num| num[:phoneNumber] }
+    elsif contacts[:phoneNumbers]
+      contacts[:phoneNumbers].map { |num| num[:phoneNumber] }
     end
   end
 
   def emails #array
-    email_info = campground_info[:contacts]
-    if email_info.nil? || email_info[:emailAddresses].empty?
+    if contacts.nil? || contacts[:emailAddresses].empty?
       ["Information unavailable at this time."]
-    elsif email_info[:emailAddresses]
-      email_info[:emailAddresses].map { |email| email[:emailAddress] }
+    elsif contacts[:emailAddresses]
+      contacts[:emailAddresses].map { |email| email[:emailAddress] }
     end
   end
 
+  def campsites
+    campground_info[:campsites]
+  end
+
   def total_count
-    campground_info[:campsites][:totalSites].to_i
+    if campsites.nil?
+      "Unavailable"
+    else
+      campsites[:totalSites].to_i
+    end
   end
 
   def tent_count
-    campground_info[:campsites][:tentOnly].to_i
+    if campsites.nil?
+      "Unavailable"
+    else
+      campsites[:tentOnly].to_i
+    end
   end
 
   def rv_count
-    campground_info[:campsites][:rvOnly].to_i
+    if campsites.nil?
+      "Unavailable"
+    else
+      campsites[:rvOnly].to_i
+    end
   end
 
   def group_count
-    campground_info[:campsites][:group].to_i
+    if campsites.nil?
+      "Unavailable"
+    else
+      campsites[:group].to_i
+    end
   end
 
   def horse_count
-    campground_info[:campsites][:horse].to_i
+    if campsites.nil?
+      "Unavailable"
+    else
+      campsites[:horse].to_i
+    end
   end
 
   def other_count
-    campground_info[:campsites][:other].to_i
+    if campsites.nil?
+      "Unavailable"
+    else
+      campsites[:other].to_i
+    end
+  end
+
+  def amenities
+    campground_info[:amenities]
   end
 
   def toilets #array
-    toilet_info = campground_info[:amenities]
-    if toilet_info.nil? || toilet_info[:toilets].empty?
+    if amenities.nil? || amenities[:toilets].empty?
       "Information unavailable at this time."
-    elsif toilet_info[:toilets]
-      toilet_info[:toilets].join(" ")
+    elsif amenities[:toilets]
+      amenities[:toilets].join(" ")
     end
   end
 
   def showers #array
-    shower_info = campground_info[:amenities]
-    if shower_info.nil? || shower_info[:showers].empty?
+    if amenities.nil? || amenities[:showers].empty?
       "Information unavailable at this time."
-    elsif shower_info[:showers]
-      shower_info[:showers].join(" ")
+    elsif amenities[:showers]
+      amenities[:showers].join(" ")
     end
   end
 
   def trash_recycling
-    recycling = campground_info[:amenities][:trashRecyclingCollection]
-    if recycling == false
+    if amenities[:trashRecyclingCollection] == false
       "Recyling is not Available."
-    elsif recycling.nil?
+    elsif amenities.nil?
       "Information unavailable at this time."
     else
-      recycling
+      amenities[:trashRecyclingCollection]
     end
   end
 
   def laundry
-    laundry_info = campground_info[:amenities][:laundry]
-    if laundry_info == false
+    if amenities[:laundry] == false
       "Laundry is not available."
-    elsif laundry_info.nil?
+    elsif amenities.nil?
       "Information unavailable at this time."
     else
-      laundry_info
+      amenities[:laundry]
     end
   end
 
  def onsite_host
-   host = campground_info[:amenities][:staffOrVolunteerHostOnSite]
-   if host == false
+   if amenities[:staffOrVolunteerHostOnSite] == false
      "No host on site."
-   elsif host.nil?
+   elsif amenities.nil?
      "Information unavailable at this time."
    else
-     host
+     amenities[:staffOrVolunteerHostOnSite]
    end
  end
 
  def potable_water #array
-   water_info = campground_info[:amenities]
-   if water_info.nil? || water_info[:potableWater].empty?
+   if amenities.nil? || amenities[:potableWater].empty?
      "Information unavailable at this time."
-   elsif water_info[:potableWater]
-     water_info[:potableWater].join(" ")
+   elsif amenities[:potableWater]
+     amenities[:potableWater].join(" ")
    end
  end
 
  def ice
-   ice_info = campground_info[:amenities][:iceAvailableForSale]
-   if ice_info == false
+   if amenities[:iceAvailableForSale] == false
      "Ice is not for sale."
-   elsif ice_info.nil?
+   elsif amenities.nil?
      "Information unavailable at this time."
    else
-     ice_info
+     amenities[:iceAvailableForSale]
    end
  end
 
  def firewood
-   wood_info = campground_info[:amenities][:firewoodForSale]
-   if wood_info == false
+   if amenities[:firewoodForSale] == false
      "Firewood is not for sale."
-   elsif wood_info.nil?
+   elsif amenities.nil?
      "Information unavailable at this time."
    else
-     wood_info
+     amenities[:firewoodForSale]
    end
  end
 
  def food_storage_lockers
-  storage= campground_info[:amenities][:foodStorageLockers]
-   if storage == false
+   if amenities[:foodStorageLockers] == false
      "No food storage lockers are available."
-   elsif storage.nil?
+   elsif amenities.nil?
      "Information unavailable at this time."
    else
-     storage
+     amenities[:foodStorageLockers]
    end
  end
 
  def cell_phone_reception
-   reception = campground_info[:amenities][:cellPhoneReception]
-   if reception == false
+   if amenities[:cellPhoneReception] == false
      "Cell phone reception is not available."
-   elsif reception.nil?
+   elsif amenities.nil?
      "Information unavailable at this time."
    else
-     reception
+     amenities[:cellPhoneReception]
    end
  end
 
- def check_acce
+ def accessibility
+   campground_info[:accessibility]
+ end
 
  def fire_stove_policy
-   policy = campground_info[:accessibility]
-   if policy.empty? || policy.nil?
-     "Information is not available."
+   if accessibility.nil? || accessibility[:fireStovePolicy].empty?
+     "Information unavailable at this time."
    else
-     policy[:fireStovePolicy]
+     accessibility[:fireStovePolicy]
    end
  end
 
  def access_roads # array
-   roads = campground_info[:accessibility]
-   if roads.nil? || roads[:accessRoads].empty?
+   if accessibility.nil? || accessibility[:accessRoads].empty?
      "Information unavailable at this time."
-   elsif roads[:accessRoads]
-     roads[:accessRoads].join(" ")
+   else
+     accessibility[:accessRoads].join(" ")
    end
  end
 
  def accessibility_info
-   ada_info = campground_info[:accessibility]
-   if ada_info.empty? || ada_info.nil?
+   if accessibility.empty? || accessibility.nil?
      "Information is unavailable at this time."
    else
-     ada_info[:adaInfo]
+     accessibility[:adaInfo]
    end
  end
 
  def wheelchair_access
-   wheelchair = campground_info[:accessibility][:wheelchairAccess]
-   if wheelchair.empty? || wheelchair.nil?
+   if accessibility.empty? || accessibility.nil?
      "Information is unavailable at this time."
    else
-     wheelchair[:wheelchairAccess]
+     accessibility[:wheelchairAccess]
    end
  end
 
