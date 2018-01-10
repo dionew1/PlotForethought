@@ -1,26 +1,84 @@
-<h2 class="name"> Camping information for <%= @park.name%></h2>
+<h2><%= @park.name %></h2>
 
-<div class="description"> <%=@park.description> </div>
-<div class="direction-info"> <%=@park.direction_info> </div>
-<div class="phone-numbers"> <%=@park.phone_numbers> </div>
-<div class="emails"> <%=@park.emails> </div>
-<div class="total-count"> <%=@park.total_count> </div>
-<div class="tent-count"> <%=@park.tent-count> </div>
-<div class="rv-count"> <%=@park.rv_count> </div>
-<div class="group-count"> <%=@park.group-count> </div>
-<div class="horse-count"> <%=@park.horse-count> </div>
-<div class="other-count"> <%=@park.other-count> </div>
-<div class="toilets"> <%=@park.toilets> </div>
-<div class="showers"> <%=@park.showers> </div>
-<div class="trash-recycling"> <%=@park.trash_recycling> </div>
-<div class="laundry"> <%=@park.laundry> </div>
-<div class="onsite-host"> <%=@park.onsite_host> </div>
-<div class="potable-water"> <%=@park.potable_water> </div>
-<div class="ice"> <%=@park.> </div>
-<div class="firewood"> <%=@park.firewood> </div>
-<div class="access-roads"> <%=@park.access_roads> </div>
-<div class="food-storage-lockers"> <%=@park.food-storage-lockers> </div>
-<div class="fire-stove-policy"> <%=@park.fire_stove_policy> </div>
-<div class="accessibility-info"> <%=@park.accessibility_info> </div>
-<div class="wheelchair-access"> <%=@park.wheelchair_access> </div>
-<div class="cell-phone-reception"> <%=@park.cell_phone_reception> </div>
+<div class="description">
+  <h4>About the Campground</h4>
+  <p><%=@park.description%></p>
+</div>
+
+<% if @park.direction_info != "" %>
+  <div class="direction-info">
+    <h4>Regarding Directions</h4>
+    <p><%=@park.direction_info%></p>
+  </div>
+<% end %>
+
+<div class="accessibility">
+  <ul class="list-group"><h4>Additional Information</h4>
+    <h5 class="list-group-item">Access Roads</h5>
+    <li class="list-group-item"><%= @park.access_roads %></li>
+
+    <h5 class="list-group-item">Accessibility</h5>
+    <li class="list-group-item"><%= @park.accessibility_info %></li>
+
+    <h5 class="list-group-item">Wheelchair Access</h5>
+    <li class="list-group-item"><%= @park.wheelchair_access %></li>
+
+    <h5 class="list-group-item">Fire Stove Policy</h5>
+    <li class="list-group-item"><%= @park.fire_stove_policy %></li>
+</div>
+
+<div class="amenities col-sm-6">
+  <ul class="list-group"><h4>Amenities</h4>
+    <h5 class="list-group-item">Toilets</h5>
+    <li class="list-group-item"><%= @park.toilets %></li>
+
+    <h5 class="list-group-item">Showers</h5>
+    <li class="list-group-item"><%= @park.showers %></li>
+
+    <h5 class="list-group-item">Trash Recylcing</h5>
+    <li class="list-group-item"><%= @park.trash_recycling %></li>
+
+    <h5 class="list-group-item">Laundry</h5>
+    <li class="list-group-item"><%= @park.laundry %></li>
+
+    <h5 class="list-group-item">Host Info</h5>
+    <li class="list-group-item"><%= @park.onsite_host%></li>
+
+    <h5 class="list-group-item">Potable Water</h5>
+    <li class="list-group-item"><%= @park.potable_water %></li>
+
+    <h5 class="list-group-item">Ice</h5>
+    <li class="list-group-item"><%= @park.ice %></li>
+
+    <h5 class="list-group-item">Firewood</h5>
+    <li class="list-group-item"><%= @park.firewood %></li>
+
+    <h5 class="list-group-item">Food Storage Lockers</h5>
+    <li class="list-group-item"><%= @park.food_storage_lockers %></li>
+  </ul>
+</div>
+
+<div class="site-count-summary col-sm-3">
+  <ul class="list-group"><h4>Campsite Counts</h4>
+    <li class="list-group-item">Tent: <%= @park.tent_count %></li>
+    <li class="list-group-item">Group: <%= @park.group_count %></li>
+    <li class="list-group-item">Horse: <%= @park.horse_count %></li>
+    <li class="list-group-item">RV: <%= @park.rv_count %></li>
+    <li class="list-group-item">Other: <%= @park.other_count %></li>
+    <li class="list-group-item"><strong>Total: </strong><%= @park.total_count %></li>
+  </ul>
+</div>
+
+<div class="contact-info col-sm-3">
+  <ul class="list-group"><h4>Contact Info</h4>
+    <h5 class="list-group-item">Phone</h5>
+    <% @park.phone_numbers.each do |num|%>
+      <li class="list-group-item"><%=num %></li>
+    <% end %>
+
+    <h5 class="list-group-item">Email</h5>
+    <% @park.emails.each do |email|%>
+    <li class="list-group-item"><%= email %></li>
+    <% end %>
+  </ul>
+</div>
