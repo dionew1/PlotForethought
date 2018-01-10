@@ -3,7 +3,7 @@
   <% @parks.each do |park| %>
   <div class="col-sm-4 center park">
     <%= image_tag("tent-152.png") %>
-    <h4><%= link_to  "#{park.name}", park_path(id: park.park_id) %></h4>
+    <h4><%= link_to  "#{park.name}", park_path(id: park.park_id), class:"park-link" %></h4>
   </div>
   <% end %>
 </div>
