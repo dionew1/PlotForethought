@@ -9,12 +9,13 @@ feature "User can search by state" do
 
     expect(page).to have_selector ".state", count: 50
     expect(page).to have_content "ALASKA"
+    VCR.use_cassette("services/user_can_search_for_camp") do
+      click_on "ALASKA"
 
-    click_on "ALASKA"
-
-    expect(page).to have_current_path(parks_path, ignore_query: true)
-    expect(page).to have_selector ".park"
-    expect(page).to have_link "Wonder Lake"
+      expect(page).to have_current_path(parks_path, ignore_query: true)
+      expect(page).to have_selector ".park"
+      expect(page).to have_link "Wonder Lake"
+    end
   end
 end
 
