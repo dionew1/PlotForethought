@@ -3,6 +3,20 @@ body {
   a, a:hover {
     text-decoration: none;
   }
+
+  h5.list-group-item {
+    background: $blue;
+    color: $white;
+  }
+
+  li.list-group-item {
+    color: $gray;
+  }
+
+  .park-show {
+    color: $orange;
+  }
+
   .logout {
     text-align:right;
     padding-top: 45px;
@@ -23,4 +37,5 @@ body {
   .center {
     text-align: center;
   }
+
 }
