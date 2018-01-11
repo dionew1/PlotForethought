@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'cloudinary'
 gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass'
+gem 'json'
 
 
 group :development, :test do
