@@ -11,8 +11,10 @@ feature 'User can add camping event to google calendar' do
       click_on "ALASKA"
       click_on "Wonder Lake"
 
-      expect(page).to have_submit_button "Save to Calendar"
+      expect(page).to have_button "Save to Calendar"
+      expect(page).to have_selector "input", count: 2
 
+      fill_in "start", with:
       click_on "Save to Calendar"
 
       expect(page).to have_content "Your trip has been saved to your calendar!"
