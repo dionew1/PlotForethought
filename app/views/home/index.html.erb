@@ -1,22 +1,12 @@
-<div class="row">
-  <div class="col-xs-9" >
-    <h1>Plot Forethought</h1>
-  </div>
-  <div class="col-xs-3 logout">
-    <% if current_user %>
-      <%= link_to "Logout", logout_path %>
-    <%end%>
-  </div>
-</div>
-  <% if current_user %>
-    <h2>Welcome, <%= current_user.first_name%>!</h2>
-    <h4>Choose a state to explore:</h4>
-    <% all_states.each do |name, abbr| %>
-      <%= link_to parks_path(state: abbr) do %>
-        <%= content_tag :span, "#{name}", :class => "state btn" %>
-      <% end %>
+<% if current_user %>
+  <h2>Welcome, <%= current_user.first_name%>!</h2>
+  <h4>Choose a state to explore:</h4>
+  <% all_states.each do |name, abbr| %>
+    <%= link_to parks_path(state: abbr) do %>
+      <%= content_tag :span, "#{name}", :class => "state btn" %>
     <% end %>
-  <% else %>
-    <h3>Looking to plan a camping trip to a National Park?</h3>
-    <p>Please login to continue <%= link_to "Sign in with Google", "/auth/google"%></p>
   <% end %>
+<% else %>
+  <h3>Looking to plan a camping trip to a National Park?</h3>
+  <p>Please login to continue <%= link_to "Sign in with Google", "/auth/google"%></p>
+<% end %>

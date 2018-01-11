@@ -15,7 +15,7 @@ feature 'User can add camping event to google calendar' do
       expect(page).to have_selector "input", count: 2
 
       fill_in "start", with: "2018-01-18"
-      fill_in "start", with: "2018-01-19"
+      fill_in "end", with: "2018-01-19"
 
       click_on "Save to Calendar"
 
