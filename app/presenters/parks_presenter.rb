@@ -5,14 +5,14 @@ class ParksPresenter
   end
 
   def park_campgrounds_by_state
-    parks_service.campgrounds_by_state[:data].map do |raw_campground_info|
-      ParkCampground.new(raw_campground_info)
+    filter_parks.map do |filtered_info|
+      ParkCampground.new(filtered_info)
     end
   end
 
   def park_campgrounds_by_id(id)
     park_campgrounds_by_state.find do |park|
-      park_id = id
+      park.park_id == id.to_i
     end
   end
 
@@ -21,6 +21,15 @@ class ParksPresenter
 
     def parks_service
       ParksService.new(state_code)
+    end
+
+    def filter_parks
+      result = parks_service.campgrounds_by_state[:data]
+      if result != 0
+        result.select do |raw_campground_info|
+          (!raw_campground_info[:name].is_a? Integer) && raw_campground_info[:name].length > 5
+        end
+      end
     end
 
 end
