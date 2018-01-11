@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 feature 'User can add camping event to google calendar' do
-  let!(:user) { create(:user) }
+  let!(:user) { create(:user, ENV["token"]) }
 
   it "by clicking on save to calendar with valid dates" do
     allow_any_instance_of(ApplicationController).to receive(:current_user). and_return(user)
