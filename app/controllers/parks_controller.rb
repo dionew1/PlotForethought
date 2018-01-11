@@ -12,6 +12,7 @@ class ParksController < ApplicationController
 
 
   def show
+    session[:park_id] = params[:id]
     @park=ParksPresenter.new(session[:state]).park_campgrounds_by_id(params[:id])
   end
 

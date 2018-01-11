@@ -84,4 +84,16 @@ body {
     background: orange;
     margin-top: 10px;
   }
+
+  .nav {
+    background: $blue;
+    color: $white;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $orange;
+    }
+  }
 }
