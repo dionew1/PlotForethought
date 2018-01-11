@@ -86,20 +86,21 @@
 
   <div class="calendar col-sm-6">
     <h5 class="list-group-item">Save Event to Google Calendar</h5>
-    <form class="form-horizontal list-group-item" action="/event" method="post">
+    <form  class="form-horizontal list-group-item" action="/events" method="post">
       <fieldset>
         <div class="control-group">
         <label class="control-label" >Start Date</label>
           <div class="controls">
-            <input class="input-date" type="date" name ="start" placeholder="date">
+            <input class="input-date" type="date" name ="start" placeholder="date"/>
           </div>
         </div>
         <div class="control-group">
         <label class="control-label" >End Date</label>
           <div class="controls">
-            <input class="input-date" type="date" name ="end" placeholder="date">
+            <input class="input-date" type="date" name ="end" placeholder="date"/>
           </div>
         </div>
+        <input type="hidden" name ="park" value="<%="#{@park.name}"%>">
         <div class="control-group">
         <div class="controls">
           <button type="submit" class="btn btn-secondary">Save to Calendar</button>
